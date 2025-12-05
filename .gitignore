@@ -1,0 +1,54 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Node / Angular
+node_modules/
+package-lock.json
+controle-financeiro/node_modules/
+controle-financeiro/dist/
+controle-financeiro/.angular/cache/
+controle-financeiro/.npm/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+
+# Demo artifacts
+screenshots/demo.gif
+screenshots/*.mp4
+screenshots/*.mov

@@ -1,0 +1,55 @@
+<div class="transacoes-page">
+  <header class="page-header">
+    <h1>Transações</h1>
+    <div class="filtro-container">
+      <select [value]="mesSelecionado" (change)="onMesChange($event)" class="select-mes">
+        <option *ngFor="let mes of meses" [value]="mes.valor">{{ mes.nome }}</option>
+      </select>
+    </div>
+    <div class="saldo-container" [class.negativo]="saldo < 0">
+      <h2>💰 Saldo Total: {{ currencyFormatter.format(saldo) }}</h2>
+    </div>
+  </header>
+
+  <section class="form-section">
+    <form [formGroup]="form" (ngSubmit)="salvar()" class="form-transacao">
+      <input formControlName="descricao" placeholder="Descrição" />
+      <input
+        formControlName="valor"
+        type="text"
+        placeholder="Valor (R$)"
+        [value]="form.get('valor')?.value ? numberFormatter.format(form.get('valor')?.value) : ''"
+        (input)="formatarValorInput($event)"
+        inputmode="decimal" />
+      <select formControlName="tipo">
+        <option value="">Selecione o tipo</option>
+        <option value="RECEITA">Receita</option>
+        <option value="DESPESA">Despesa</option>
+      </select>
+      <button type="submit" class="btn primary">Salvar</button>
+    </form>
+  </section>
+
+  <hr />
+
+  <section class="list-section">
+    <ul class="transacoes-list">
+      <li *ngFor="let t of transacoesFiltradas" class="transacao-item">
+        <div class="transacao-info">
+          <div class="descricao">{{ t.descricao }}</div>
+          <div class="valor">{{ currencyFormatter.format(t.valor) }}</div>
+          <div class="tipo">{{ t.tipo }}</div>
+        </div>
+        <div class="transacao-actions">
+          <button class="btn edit" (click)="editar(t)">Editar</button>
+          <button class="btn delete" (click)="excluir(t.id)">Excluir</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+
+
+<div class="grafico-container" *ngIf="isBrowser">
+  <canvas #chartCanvas></canvas>
+</div>

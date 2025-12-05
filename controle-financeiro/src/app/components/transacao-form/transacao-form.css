@@ -1,0 +1,119 @@
+.form-section .form-transacao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.error-message {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.form-section input,
+.form-section select {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  height: 38px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+.form-section input:focus,
+.form-section select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-section input::placeholder {
+  color: #9ca3af;
+}
+
+.form-section input[formControlName="descricao"] { width: 100%; }
+.form-section input[formControlName="valor"] { width: 100%; }
+.form-section select { width: 100%; }
+
+.campo-categoria {
+  width: 100%;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .campo-categoria {
+    flex-basis: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .form-section {
+    display: flex;
+    justify-content: center;
+  }
+  .form-section .form-transacao {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: linear-gradient(180deg,#2563eb,#1e40af);
+  color: #fff;
+  transition: filter 0.2s;
+  height: 38px;
+  min-width: 100px;
+}
+
+.btn.primary:hover {
+  filter: brightness(1.1);
+}
+
+.btn.primary:active {
+  filter: brightness(0.95);
+}
+
+@media (max-width: 640px) {
+  .form-section input[formControlName="descricao"] { flex-basis: 100%; }
+}
+
+@media (max-width: 480px) {
+  .form-section .form-transacao {
+    gap: 8px;
+    padding: 8px;
+  }
+  .form-section input,
+  .form-section select {
+    font-size: 0.85rem;
+    height: 32px;
+    padding: 6px 8px;
+  }
+  .btn.primary {
+    min-width: 80px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}

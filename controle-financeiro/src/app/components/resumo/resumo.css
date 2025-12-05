@@ -1,0 +1,63 @@
+.resumo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin: 16px;
+}
+
+.resumo-item {
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.resumo-item:hover {
+  transform: translateY(-2px);
+}
+
+.resumo-item h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.resumo-item p {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.receitas {
+  background-color: #ecfdf5;
+  border: 1px solid #d1fae5;
+}
+
+.receitas p {
+  color: #059669;
+}
+
+.despesas {
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+}
+
+.despesas p {
+  color: #dc2626;
+}
+
+@media (max-width: 480px) {
+  .resumo-container {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .resumo-item {
+    padding: 10px;
+  }
+  .resumo-item p {
+    font-size: 1.2rem;
+  }
+}
